@@ -1,3 +1,1 @@
-//import { SimpleSchema } from 'simple-schema';
-
-//import '../lib/collections/collection.js';
+import '../lib/collections/collection.js';

@@ -1,6 +1,6 @@
 // Defining the Schema
 
-import {SimpleSchema} from 'simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 export const userinfo = new SimpleSchema({
 	fname: {
