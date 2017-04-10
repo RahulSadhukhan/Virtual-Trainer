@@ -23,3 +23,4 @@ aldeed:collection2-core@2.0.0
 materialize:materialize
 templating-compiler
 kadira:blaze-layout
+useraccounts:materialize

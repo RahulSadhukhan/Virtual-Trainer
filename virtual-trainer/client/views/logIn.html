@@ -1,4 +1,4 @@
-<template name='home'>
+<template name='login'>
   <style>
     #main {
       flex: 1 0 auto;
@@ -33,7 +33,9 @@
       <h5 class="header center black-text">healthy body leads to healthy life</h5>
       <br>
       <div class="row center">
-        <a href="/sign-in" class="btn-large waves-effect waves-light">Log in</a>
+        <div class="inner">
+          {{> atForm}}
+        </div>
       </div>
     </div>
   </div>

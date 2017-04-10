@@ -11,10 +11,10 @@ FlowRouter.route('/', {
   }],
   action: function(params, queryParams) {
     BlazeLayout.render('masterLayout', {
-      main: 'home'
+      main: 'login'
     });
   },
-  name: 'home'
+  name: 'LogIn'
 });
 
 FlowRouter.route('/dashboard', {
@@ -30,4 +30,21 @@ FlowRouter.route('/dashboard', {
     })
   },
   name: 'dashboard'
+});
+
+var myPostLogout = function(){
+    //example redirect after logout
+    Router.go('/');
+};
+
+
+AccountsTemplates.configureRoute('changePwd');
+AccountsTemplates.configureRoute('forgotPwd');
+AccountsTemplates.configureRoute('resetPwd');
+AccountsTemplates.configureRoute('signIn');
+
+AccountsTemplates.configure({
+  homeRoutePath: '/',
+  redirectTimeout: 4000,
+  onLogoutHook: myPostLogout,
 });
