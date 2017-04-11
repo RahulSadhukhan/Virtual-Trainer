@@ -32,19 +32,23 @@ FlowRouter.route('/dashboard', {
   name: 'dashboard'
 });
 
-var myPostLogout = function(){
-    //example redirect after logout
-    Router.go('/');
-};
-
-
-AccountsTemplates.configureRoute('changePwd');
-AccountsTemplates.configureRoute('forgotPwd');
-AccountsTemplates.configureRoute('resetPwd');
-AccountsTemplates.configureRoute('signIn');
+// AccountsTemplates.configureRoute('changePwd');
+// AccountsTemplates.configureRoute('forgotPwd');
+// AccountsTemplates.configureRoute('resetPwd');
+AccountsTemplates.configureRoute('signIn', {
+  redirect: function(){
+        var user = Meteor.user();
+        if (user) {
+          FlowRouter.go('/dashboard');
+        }
+    },
+});
 
 AccountsTemplates.configure({
-  homeRoutePath: '/',
+  homeRoutePath: '/dashboard',
   redirectTimeout: 4000,
-  onLogoutHook: myPostLogout,
+  onLogoutHook: function(){
+      //example redirect after logout
+      Router.go('/');
+  },
 });

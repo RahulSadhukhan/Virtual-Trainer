@@ -24,3 +24,4 @@ materialize:materialize
 templating-compiler
 kadira:blaze-layout
 useraccounts:materialize
+useraccounts:flow-routing
