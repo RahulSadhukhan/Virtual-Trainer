@@ -28,7 +28,7 @@
      </div>
    </div>
 
-	<div class="row">
+	<div class="row" style="width:50%">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
@@ -41,30 +41,41 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
+        <div class="input-field col s6">
+          <input id="age" type="number" class="validate">
+          <label for="age">Age</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="gender" type="text" class="validate">
+          <label for="gender">Gender</label> 
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
           <input id="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
+        <div class="input-field col s6">
+          <input id="phone" type="tel" class="validate">
+          <label for="phone">Mobile Number</label>
+        </div>
       </div>
       <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            <label for="email" data-error="wrong" data-success="right">Email</label>
-          </div>
+        <div class="input-field col s12">
+          <input id="height" type="text" class="validate">
+          <label for="height">Height</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="weight" type="text" class="validate">
+          <label for="weight">Weight</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input disabled id="disabled" type="text" class="validate">
+          <label for="disabled">BMI</label>
         </div>
       </div>
     </form>
