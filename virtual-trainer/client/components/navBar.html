@@ -8,13 +8,30 @@
           <li><a href="sass.html">Sass</a></li>
           <li><a href="badges.html">Components</a></li>
           <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          {{#if currentUser}}
+          <li>
+            <a href="#" class="right dropdown-button" style="margin-top:3px" data-activates="profile-options">
+              <div>
+                <!-- {{repName currentUser.fname currentUser.lname}}&nbsp;&nbsp; -->
+                <div class="right circle responsive-img" style="border: 3px solid white;">
+                  {{> avatar user=currentUser shape="circle"}}
+                </div>
+              </div>
+            </a>
+          </li>
+          {{else}}
+          <li><a class="waves-effect waves-light btn">SignIn</a></li>
+          {{/if}}
+        </ul>
+        <ul id="profile-options" class="dropdown-content">
+          <li><a href="/profile">Edit Profile</a></li>
+          <li class="divider"></li>
+          <li><a href="/signout">Sign out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="sass.html">Sass</a></li>
           <li><a href="badges.html">Components</a></li>
           <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
         </ul>
       </div>
     </nav>
