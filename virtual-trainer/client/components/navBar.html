@@ -5,12 +5,33 @@
         <a href="#!" class="brand-logo">Logo</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
+          <li><a href="#">Sass</a></li>
+          <li><a href="#">Components</a></li>
+          <li><a href="#">Javascript</a></li>
           {{#if currentUser}}
           <li>
-            <a href="#" class="right dropdown-button" style="margin-top:3px" data-activates="profile-options">
+            <a href="#" class="dropdown-button" style="" data-activates="profile-options">
+              dropdown
+              <!-- <div> -->
+                <!-- {{repName currentUser.fname currentUser.lname}}&nbsp;&nbsp; -->
+                <!-- <div class="right circle responsive-img" style="border: 3px solid white;">
+                  {{> avatar user=currentUser shape="circle"}}
+                </div> -->
+              <!-- </div> -->
+              <ul id="profile-options" class="dropdown-content">
+                <li><a href="/profile">Edit Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="/signout">Sign out</a></li>
+              </ul>
+            </a>
+          </li>
+          {{else}}
+          <li><a class="waves-effect waves-light btn">SignIn</a></li>
+          {{/if}}
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li>
+            <a href="#" class="dropdown-button" style="" data-activates="profile-options">
               <div>
                 <!-- {{repName currentUser.fname currentUser.lname}}&nbsp;&nbsp; -->
                 <div class="right circle responsive-img" style="border: 3px solid white;">
@@ -19,19 +40,13 @@
               </div>
             </a>
           </li>
-          {{else}}
-          <li><a class="waves-effect waves-light btn">SignIn</a></li>
-          {{/if}}
+          <li><a href="#">Components</a></li>
+          <li><a href="#">Javascript</a></li>
         </ul>
         <ul id="profile-options" class="dropdown-content">
           <li><a href="/profile">Edit Profile</a></li>
           <li class="divider"></li>
           <li><a href="/signout">Sign out</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
         </ul>
       </div>
     </nav>
