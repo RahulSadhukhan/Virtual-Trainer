@@ -1,0 +1,42 @@
+<template name="yoga">
+  <div class="row">
+      <div id="cien-card" class="col s12 m6 cards-container">
+            <div class="card main">
+                {{> cardTitle title="Yoga" icon="list"}}
+                <div class="card-content main">
+                    <div class="row">
+                        <div id="lhs" class="col m12">
+                            <ul class="collection" style="margin-top:0">
+                                <li class="collection-item">
+                                    <div id="data-table-simple_filter" class="dataTables_filter">
+                                        <label>Search:<input id="search" type="search"></label>
+                                    </div>
+                                </li>
+                                {{#each listData}}
+                                <li class="collection-item avatar">
+                                    <div><span class="title">{{name}}</span></div>
+                                    <div><a href="/admin/c/{{_id}}" class="secondary-content"><i class="material-icons very-dark-grey-color next-link">navigate_next</i></a></div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      {{#if showdetail}}
+      <div id="cien-card" class="col s12 m6 cards-container">
+        <div class="card main">
+          {{> cardTitle title="Content" icon="library_books"}}
+            <div class="card-content main">
+                <div class="row">
+                    <div id="rhs" class="col s12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      {{/if}}
+  </div>
+</template>
