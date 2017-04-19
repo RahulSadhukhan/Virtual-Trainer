@@ -1,5 +1,5 @@
 import './yoga.html'
 
-yoga.helpers({
+Template.yoga.helpers({
   showdetail: () => true,
 });
