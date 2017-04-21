@@ -32,6 +32,21 @@ FlowRouter.route('/dashboard', {
   name: 'dashboard'
 });
 
+
+FlowRouter.route('/exercise/:id', {
+  triggersEnter: [function(context, redirect) {
+    if(!Meteor.userId()) {
+      redirect('/');
+    }
+  }],
+  action: function(params, queryParams) {
+    BlazeLayout.render('masterLayout', {
+      nav: 'navbar',
+      main: 'gym'
+    })
+  }
+});
+
 FlowRouter.route('/yoga/:id', {
   triggersEnter: [function(context, redirect) {
     if(!Meteor.userId()) {

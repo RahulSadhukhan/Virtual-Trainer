@@ -1,8 +1,8 @@
-<template name="yoga">
+<template name="gym">
   <div class="row">
       <div id="vt-card" class="col s12 m6 cards-container">
             <div class="card main">
-                {{> cardTitle title="Yoga" icon="list"}}
+                {{> cardTitle title="Exercise" icon="list"}}
                 <div class="card-content main">
                     <div class="row">
                         <div id="lhs" class="col m12">
@@ -39,7 +39,7 @@
                       {{#with content}}
                         <h4>{{this.title}}</h4>
                         <div class="center">
-                          <img class="responsive-img" src="/yoga_img/{{this.img1}}">
+                          <img class="responsive-img" src="/gym_img/{{this.img1}}">
                         </div>
                         <br>
                         {{#if this.description}}
@@ -48,7 +48,7 @@
                         {{/if}}
                         {{#if this.img2}}
                           <div class="center">
-                            <img class="responsive-img" src="/yoga_img/{{this.img2}}">
+                            <img class="responsive-img" src="/gym_img/{{this.img2}}">
                           </div>
                           <br>
                         {{/if}}

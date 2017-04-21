@@ -19,7 +19,7 @@ if (Meteor.isServer) {
     return null;
   });
 
-  Meteor.publish('Gym', function () {
+  Meteor.publish('gym', function () {
     if (this.userId)
     {
       return Gym.find({});
