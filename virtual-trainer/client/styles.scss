@@ -1,3 +1,5 @@
+$very-dark-grey: #333333;
+
 html, body {
   min-height:100%; padding:0; margin:0;
 }
@@ -78,4 +80,33 @@ html, body {
 #vt-card .collection-title  {
   font-size: 14pt;
   padding-bottom: 10px;
+}
+
+/*=================================================================================
+    Hover states
+====================================================================================*/
+
+.teal-hover {
+   color: $very-dark-grey;
+}
+
+.teal-hover:hover {
+   background-color: #2bbbad;
+   color: white;
+}
+
+/*=================================================================================
+    Active states
+====================================================================================*/
+
+.teal-active, .teal-active > a > div > span, .teal-active > a > div > span > i{
+   background-color: #2bbbad !important;
+   color: white !important;
+}
+
+/*----------------------------------------
+    Collections
+------------------------------------------*/
+.collection-item {
+  width: 100%;
 }

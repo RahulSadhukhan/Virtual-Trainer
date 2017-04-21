@@ -32,7 +32,7 @@ FlowRouter.route('/dashboard', {
   name: 'dashboard'
 });
 
-FlowRouter.route('/yoga:id', {
+FlowRouter.route('/yoga/:id', {
   triggersEnter: [function(context, redirect) {
     if(!Meteor.userId()) {
       redirect('/');

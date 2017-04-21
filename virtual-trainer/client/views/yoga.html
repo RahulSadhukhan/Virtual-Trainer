@@ -1,6 +1,6 @@
 <template name="yoga">
   <div class="row">
-      <div id="cien-card" class="col s12 m6 cards-container">
+      <div id="vt-card" class="col s12 m6 cards-container">
             <div class="card main">
                 {{> cardTitle title="Yoga" icon="list"}}
                 <div class="card-content main">
@@ -13,9 +13,13 @@
                                     </div>
                                 </li>
                                 {{#each listData}}
-                                <li class="collection-item avatar">
-                                    <div><span class="title">{{name}}</span></div>
-                                    <div><a href="/admin/c/{{_id}}" class="secondary-content"><i class="material-icons very-dark-grey-color next-link">navigate_next</i></a></div>
+                                <li class="collection-item teal-hover">
+                                  <a class="detail" id={{_id}}>
+                                    <div style="height:25px" class="teal-hover">
+                                      <span class="collection-title left" style="font-size:1.3rem"><span>{{title}}</span></span>
+                                      <span class="right"><i class="material-icons very-dark-grey-color next-link">navigate_next</i></span>
+                                    </div>
+                                  </a>
                                 </li>
                                 {{/each}}
                             </ul>
@@ -24,7 +28,7 @@
                 </div>
             </div>
       </div>
-      {{#if showdetail}}
+      {{#if showDetailCard}}
       <div id="cien-card" class="col s12 m6 cards-container">
         <div class="card main">
           {{> cardTitle title="Content" icon="library_books"}}
@@ -32,7 +36,23 @@
                 <div class="row">
                   <span class="center">
                     <div id="rhs" class="col s12">
-                      <iframe width="420" height="315" src="https://www.youtube.com/embed/Z_eC4gPHPRo"></iframe>
+                      {{#if content}}
+                        <h4>{{this.title}}</h4>
+                        {{#if content.description}}
+                          <p>content.description</p>
+                        {{/if}}
+                        <p>Steps for performing:</p>
+                        <ul>
+                          {{#each content.steps}}
+                            <li>{{this}}</li>
+                          {{/each}}
+                        </ul>
+                        <br>
+                        <div class="center">
+                          <iframe src="http://www.youtube.com/embed/{{content.url}}" width="560" height="315"
+                          frameborder="0" allowfullscreen></iframe>
+                        </div>
+                      {{/if}}
                     </div>
                   </span>
                 </div>
