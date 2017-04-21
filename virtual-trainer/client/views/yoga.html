@@ -29,30 +29,30 @@
             </div>
       </div>
       {{#if showDetailCard}}
-      <div id="cien-card" class="col s12 m6 cards-container">
+      <div id="vt-card" class="col s12 m6 cards-container">
         <div class="card main">
           {{> cardTitle title="Content" icon="library_books"}}
             <div class="card-content main">
                 <div class="row">
-                  <span class="center">
+                  <span>
                     <div id="rhs" class="col s12">
-                      {{#if content}}
+                      {{#with content}}
                         <h4>{{this.title}}</h4>
-                        {{#if content.description}}
-                          <p>content.description</p>
+                        {{#if this.description}}
+                          <p>{{this.description}}</p>
                         {{/if}}
                         <p>Steps for performing:</p>
-                        <ul>
+                        <ul class="right">
                           {{#each content.steps}}
                             <li>{{this}}</li>
                           {{/each}}
                         </ul>
                         <br>
                         <div class="center">
-                          <iframe src="http://www.youtube.com/embed/{{content.url}}" width="560" height="315"
+                          <iframe src="http://www.youtube.com/embed/{{content.url}}" width="460" height="260"
                           frameborder="0" allowfullscreen></iframe>
                         </div>
-                      {{/if}}
+                      {{/with}}
                     </div>
                   </span>
                 </div>
