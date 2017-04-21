@@ -1,0 +1,104 @@
+
+@import "{materialize:materialize}/sass/components/_color.scss";
+
+$very-dark-grey: #333333;
+
+html, body {
+  min-height:100%; padding:0; margin:0;
+}
+
+#wrapper {
+  padding:0 0 0 0; position:absolute; top:0; bottom:0; left:0; right:0;
+}
+
+.noborder {
+  border: 0 !important;
+}
+
+.deep-orange-border {
+  border: 1px solid orange;
+}
+
+.avatar-image {
+  object-fit: cover;
+}
+
+#vt-card {
+  max-width: 1024px;
+}
+
+
+#vt-card .card-title.main {
+  border-bottom: grey 2px solid;
+  padding: 5px;
+}
+
+#vt-card .card-title.main i {
+  font-size: 2.5rem;
+  vertical-align: bottom;
+}
+
+#vt-card #lhs {
+  @media screen and (min-width: 900px) {
+    padding: 12px;
+  }
+}
+
+#vt-card .card .row {
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+#vt-card .card .row .col {
+  padding: 5px;
+}
+
+#vt-card .line {
+  border-bottom: grey 1px solid;
+  height: 1px;
+}
+
+#vt-card .card-content {
+  padding: 10px;
+}
+
+#vt-card .card-actions {
+  border-top: grey 1px solid;
+  margin: 0 8px;
+  padding: 8px;
+}
+
+#vt-card .collection-title  {
+  font-size: 14pt;
+  padding-bottom: 10px;
+}
+
+/*=================================================================================
+    Hover states
+====================================================================================*/
+
+.teal-hover {
+   color: $very-dark-grey;
+   cursor: pointer;
+}
+
+.teal-hover:hover {
+   background-color: #2bbbad;
+   color: white;
+}
+
+/*=================================================================================
+    Active states
+====================================================================================*/
+
+.teal-active, .teal-active > a > div > span, .teal-active > a > div > span > i{
+   background-color: #2bbbad !important;
+   color: white !important;
+}
+
+/*----------------------------------------
+    Collections
+------------------------------------------*/
+.collection-item {
+  width: 100%;
+}

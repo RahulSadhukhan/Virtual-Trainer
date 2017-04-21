@@ -1,0 +1,75 @@
+<template name="gym">
+  <div class="row">
+      <div id="vt-card" class="col s12 m6 cards-container">
+            <div class="card main">
+                {{> cardTitle title="Exercise" icon="list"}}
+                <div class="card-content main">
+                    <div class="row">
+                        <div id="lhs" class="col m12">
+                            <ul class="collection" style="margin-top:0">
+                                <li class="collection-item">
+                                    <div id="data-table-simple_filter" class="dataTables_filter">
+                                        <label>Search:<input id="search" type="search"></label>
+                                    </div>
+                                </li>
+                                {{#each listData}}
+                                <li class="collection-item teal-hover">
+                                  <a class="detail" id={{_id}}>
+                                    <div style="height:25px" class="teal-hover">
+                                      <span class="collection-title left" style="font-size:1.3rem"><span>{{title}}</span></span>
+                                      <span class="right"><i class="material-icons very-dark-grey-color next-link">navigate_next</i></span>
+                                    </div>
+                                  </a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      {{#if showDetailCard}}
+      <div id="vt-card" class="col s12 m6 cards-container">
+        <div class="card main">
+          {{> cardTitle title="Content" icon="library_books"}}
+            <div class="card-content main">
+                <div class="row">
+                  <span>
+                    <div id="rhs" class="col s12">
+                      {{#with content}}
+                        <h4>{{this.title}}</h4>
+                        <div class="center">
+                          <img class="responsive-img" src="/gym_img/{{this.img1}}">
+                        </div>
+                        <br>
+                        {{#if this.description}}
+                          <p>{{this.description}}</p>
+                          <br>
+                        {{/if}}
+                        {{#if this.img2}}
+                          <div class="center">
+                            <img class="responsive-img" src="/gym_img/{{this.img2}}">
+                          </div>
+                          <br>
+                        {{/if}}
+                        <p>Steps for performing:</p>
+                        <ul class="right">
+                          {{#each content.steps}}
+                            <li>{{this}}</li>
+                          {{/each}}
+                        </ul>
+                        <br>
+                        <div class="center-align">
+                          <iframe width="460" height="300" src="http://www.youtube.com/embed/{{content.url}}"
+                          frameborder="0" allowfullscreen></iframe>
+                        </div>
+                      {{/with}}
+                    </div>
+                  </span>
+                </div>
+            </div>
+        </div>
+      </div>
+      {{/if}}
+  </div>
+</template>
