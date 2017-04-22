@@ -4,25 +4,11 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 FlowRouter.route('/', {
   triggersEnter: [function(context, redirect) {
-    if (Meteor.userId())
-    {
-      redirect('/dashboard');
-    }
-  }],
-  action: function(params, queryParams) {
-    BlazeLayout.render('masterLayout', {
-      main: 'login'
-    });
-  },
-  name: 'LogIn'
+    redirect('/dashboard');
+  }]
 });
 
 FlowRouter.route('/dashboard', {
-  triggersEnter: [function(context, redirect) {
-    if(!Meteor.userId()) {
-      redirect('/');
-    }
-  }],
   action: function(params, queryParams) {
     BlazeLayout.render('masterLayout', {
       nav: 'navbar',
@@ -32,11 +18,33 @@ FlowRouter.route('/dashboard', {
   name: 'dashboard'
 });
 
+FlowRouter.route('/signIn', {
+  action: function(params, queryParams) {
+    BlazeLayout.render('masterLayout', {
+      main: 'login'
+    })
+  },
+  name: 'signIn'
+});
+
+FlowRouter.route('/profile', {
+  triggersEnter: [function(context, redirect) {
+    if(!Meteor.userId()) {
+      redirect('/signIn');
+    }
+  }],
+  action: function(params, queryParams) {
+    BlazeLayout.render('masterLayout', {
+      nav: 'navbar',
+      main: 'profile'
+    })
+  }
+});
 
 FlowRouter.route('/exercise/:id', {
   triggersEnter: [function(context, redirect) {
     if(!Meteor.userId()) {
-      redirect('/');
+      redirect('/signIn');
     }
   }],
   action: function(params, queryParams) {
@@ -50,7 +58,7 @@ FlowRouter.route('/exercise/:id', {
 FlowRouter.route('/yoga/:id', {
   triggersEnter: [function(context, redirect) {
     if(!Meteor.userId()) {
-      redirect('/');
+      redirect('/signIn');
     }
   }],
   action: function(params, queryParams) {
@@ -69,7 +77,7 @@ AccountsTemplates.configureRoute('signIn', {
   redirect: function(){
         var user = Meteor.user();
         if (user) {
-          FlowRouter.go('/dashboard');
+          FlowRouter.go('/profile');
         }
     },
 });

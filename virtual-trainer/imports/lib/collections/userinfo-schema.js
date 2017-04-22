@@ -11,10 +11,10 @@ export const userinfo = new SimpleSchema({
     type: String,
     label: "Last Name"
   },
-  dob: {
-    type: Date,
-    label: "DOB"
-  },
+	age: {
+		type: Number,
+		label: "Age"
+	},
   height: {
     type: Number,
     label: "Height"
