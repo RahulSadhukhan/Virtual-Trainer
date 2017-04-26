@@ -1,5 +1,6 @@
 <template name="gym">
   <div class="row">
+    {{#if showListCard showDetailCard}}
       <div id="vt-card" class="col s12 m6 cards-container">
             <div class="card main">
                 {{> cardTitle title="Exercise" icon="list"}}
@@ -13,7 +14,7 @@
                                     </div>
                                 </li>
                                 {{#each listData}}
-                                <li class="collection-item teal-hover">
+                                <li class="collection-item teal-hover {{#if isSelected _id gid}}teal-active{{/if}}">
                                   <a class="detail" id={{_id}}>
                                     <div style="height:25px" class="teal-hover">
                                       <span class="collection-title left" style="font-size:1.3rem"><span>{{title}}</span></span>
@@ -28,6 +29,7 @@
                 </div>
             </div>
       </div>
+      {{/if}}
       {{#if showDetailCard}}
       <div id="vt-card" class="col s12 m6 cards-container">
         <div class="card main">
@@ -59,10 +61,8 @@
                           {{/each}}
                         </ul>
                         <br>
-                        <div class="center-align">
-                          <iframe width="460" height="300" src="http://www.youtube.com/embed/{{content.url}}"
+                          <iframe width=100% height="320" src="http://www.youtube.com/embed/{{content.url}}"
                           frameborder="0" allowfullscreen></iframe>
-                        </div>
                       {{/with}}
                     </div>
                   </span>

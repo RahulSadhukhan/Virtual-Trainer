@@ -34,5 +34,12 @@ Template.yoga.helpers({
   },
   yid: () => Template.instance().id.get(),
   showDetailCard: () => showYogaTemplate.get(),
+  isSelected: (currentId, selectedId) => {
+    if(currentId === selectedId)
+      return 'selected';
+  },
+  showListCard: (showDetailCard) => {
+    return !($(window).width() <= 700 && showDetailCard);
+  },
 
 });

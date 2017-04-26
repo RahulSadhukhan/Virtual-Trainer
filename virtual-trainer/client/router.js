@@ -70,6 +70,14 @@ FlowRouter.route('/yoga/:id', {
 
 });
 
+FlowRouter.route('/signOut', {
+  triggersEnter: [function(context, redirect) {
+    AccountsTemplates.logout();
+    redirect('/signIn');
+  }]
+})
+
+
 // AccountsTemplates.configureRoute('changePwd');
 // AccountsTemplates.configureRoute('forgotPwd');
 // AccountsTemplates.configureRoute('resetPwd');

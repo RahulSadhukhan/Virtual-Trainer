@@ -32,7 +32,13 @@ Template.gym.helpers({
       return Gym.findOne({ '_id': id });
     }
   },
-  yid: () => Template.instance().id.get(),
+  gid: () => Template.instance().id.get(),
   showDetailCard: () => showGymTemplate.get(),
-
+  isSelected: (currentId, selectedId) => {
+    if(currentId === selectedId)
+        return 'selected';
+  },
+  showListCard: (showDetailCard) => {
+    return !($(window).width() <= 700 && showDetailCard);
+  },
 });
