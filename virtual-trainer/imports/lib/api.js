@@ -1,4 +1,6 @@
 import { UserInfo } from './collections/collection';
+import { Meteor } from 'meteor/meteor';
+import SimpleSchema from 'simpl-schema';
 
 Meteor.methods({
   'save-profile'({ data }) {
@@ -7,9 +9,9 @@ Meteor.methods({
     }).validate({ data });
 
     if(!this.userId) {
-      return throw new Meteor.Error('Not Authorised', 'cannot add profile user does not exist');
+      throw new Meteor.Error('Not Authorised', 'cannot add profile user does not exist');
     }
-    return UserInfo.insert({ fname: data.fname, lname: data.lname, age: data.age, height: data.height, weight: data.weight });
+    return Meteor.users.update({ _id: this.userId }, { fname: data.fname, lname: data.lname, age: data.age, height: data.height, weight: data.weight }, { upsert: true });
   }
 
 });
