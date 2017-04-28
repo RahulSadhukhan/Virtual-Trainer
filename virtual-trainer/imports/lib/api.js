@@ -11,7 +11,7 @@ Meteor.methods({
     if(!this.userId) {
       throw new Meteor.Error('Not Authorised', 'cannot add profile user does not exist');
     }
-    return Meteor.users.update({ _id: this.userId }, { fname: data.fname, lname: data.lname, age: data.age, height: data.height, weight: data.weight }, { upsert: true });
+    return Meteor.users.update({ _id: this.userId }, { $set: { fname: data.fname, lname: data.lname, age: data.age, height: data.height, weight: data.weight, phone: data.phone, bmi: data.bmi, viseralFat: data.viseralFat, subcutaneousFat: data.subcutaneousFat } });
   }
 
 });

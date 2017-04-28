@@ -1,6 +1,5 @@
 import './profile.html';
 
-
 Template.profile.events({
   'click #save' (event,template) {
     event.preventDefault();

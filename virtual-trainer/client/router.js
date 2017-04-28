@@ -18,19 +18,24 @@ FlowRouter.route('/dashboard', {
   name: 'dashboard'
 });
 
-FlowRouter.route('/signIn', {
+FlowRouter.route('/sign-in', {
+  triggersEnter: [function(context, redirect) {
+    if(Meteor.userId()) {
+      redirect('/dashboard');
+    }
+  }],
   action: function(params, queryParams) {
     BlazeLayout.render('masterLayout', {
       main: 'login'
     })
   },
-  name: 'signIn'
+  name: 'sign-in'
 });
 
 FlowRouter.route('/profile', {
   triggersEnter: [function(context, redirect) {
     if(!Meteor.userId()) {
-      redirect('/signIn');
+      redirect('/sign-in');
     }
   }],
   action: function(params, queryParams) {
@@ -44,7 +49,7 @@ FlowRouter.route('/profile', {
 FlowRouter.route('/exercise/:id', {
   triggersEnter: [function(context, redirect) {
     if(!Meteor.userId()) {
-      redirect('/signIn');
+      redirect('/sign-in');
     }
   }],
   action: function(params, queryParams) {
@@ -58,7 +63,7 @@ FlowRouter.route('/exercise/:id', {
 FlowRouter.route('/yoga/:id', {
   triggersEnter: [function(context, redirect) {
     if(!Meteor.userId()) {
-      redirect('/signIn');
+      redirect('/sign-in');
     }
   }],
   action: function(params, queryParams) {
@@ -72,10 +77,18 @@ FlowRouter.route('/yoga/:id', {
 
 FlowRouter.route('/signOut', {
   triggersEnter: [function(context, redirect) {
-    AccountsTemplates.logout();
-    redirect('/signIn');
+    Meteor.logout();
+    redirect('/sign-in');
+  }]
+});
+
+FlowRouter.route('/signUp', {
+  triggersEnter: [function(context, redirect) {
+    Meteor.logout();
+    redirect('/profile');
   }]
 })
+
 
 
 // AccountsTemplates.configureRoute('changePwd');
@@ -85,16 +98,7 @@ AccountsTemplates.configureRoute('signIn', {
   redirect: function(){
         var user = Meteor.user();
         if (user) {
-          FlowRouter.go('/profile');
+          FlowRouter.go('/dashboard');
         }
     },
-});
-
-AccountsTemplates.configure({
-  homeRoutePath: '/dashboard',
-  redirectTimeout: 4000,
-  onLogoutHook: function(){
-      //example redirect after logout
-      Router.go('/');
-  },
 });
