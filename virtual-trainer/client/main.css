@@ -1,0 +1,24 @@
+#nav_f,#contact{
+  background-color: #2196F3;
+}
+.parallax-container {
+      height: 300px;
+}
+.icon_about{
+  height : 200px;
+  width : 200px;
+}
+.header_text{
+  color : #2196F3;
+}
+.card-avatar{
+  width: 250px;
+  height : 300px;
+}
+.activator{
+  width : 250px;
+  height : 200px;
+}
+#testimonial{
+  background-color: rgb(247,247,247);
+}

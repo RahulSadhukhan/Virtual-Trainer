@@ -1,43 +1,27 @@
 <template name='navbar'>
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-  </ul>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/dashboard" class="brand-logo"><img src="/logo.png" height="70" width="70"></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/yoga/list">Yoga</a></li>
-          <li><a href="/exercise/list">Exercise</a></li>
-          {{#if currentUser}}
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More<i class="material-icons right">arrow_drop_down</i></a></li>
-          {{else}}
-          <li><a href="/signIn" class="waves-effect waves-light btn">Sign In</a></li>
-          {{/if}}
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li>
-            <a href="#" class="dropdown-button" style="" data-activates="profile-options">
-              <div>
-                <!-- {{repName currentUser.fname currentUser.lname}}&nbsp;&nbsp; -->
-                <div class="right circle responsive-img" style="border: 3px solid white;">
-                  {{> avatar user=currentUser shape="circle"}}
-                </div>
+  <div class="navbar-fixed">
+      <nav id="nav_f" class="default_color" role="navigation">
+          <div class="container">
+              <div class="nav-wrapper">
+              <a href="#" id="logo-container" class="brand-logo">Virtual Trainer</a>
+                  <ul class="right hide-on-med-and-down">
+                      <li><a href="#intro">Service</a></li>
+                      <li><a href="#work">Work</a></li>
+                      <li><a href="#team">Team</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                      <li><span>{{> loginButtons}}</span></li>
+                  </ul>
+                  <ul id="nav-mobile" class="side-nav">
+                      <li><a href="#intro">Service</a></li>
+                      <li><a href="#work">Work</a></li>
+                      <li><a href="#team">Team</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                      <li><span >{{> loginButtons}}</span></li>
+                  </ul>
+              <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
               </div>
-            </a>
-          </li>
-          <li><a href="/yoga/list">Yoga</a></li>
-          <li><a href="/exercise/list">Exercise</a></li>
-        </ul>
-        <ul id="profile-options" class="dropdown-content">
-          <li><a href="/profile">Edit Profile</a></li>
-          <li class="divider"></li>
-          <li><a href="/signout">Sign out</a></li>
-        </ul>
-      </div>
-    </nav>
+          </div>
+      </nav>
+  </div>
 <!-- </div> -->
 </template>

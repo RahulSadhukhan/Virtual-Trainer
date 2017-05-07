@@ -12,7 +12,12 @@ FlowRouter.route('/dashboard', {
   action: function(params, queryParams) {
     BlazeLayout.render('masterLayout', {
       nav: 'navbar',
-      main: 'dashboard'
+      main: 'dashboard',
+      about: 'about',
+      testimonial: 'testimonial',
+      parallax: 'parallax',
+      team : 'team',
+      footer: 'footer'
     })
   },
   name: 'dashboard'
