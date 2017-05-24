@@ -1,0 +1,30 @@
+<template name="dashboardLayout">
+    <div id="wrapper">
+       <div>
+         {{> Template.dynamic template=nav}}
+       </div>
+       <div class="row">
+          <div class="col s12 m12 l3" id="main">
+            {{> Template.dynamic template=main}}
+          </div>
+          <div class="col s12 m12 l6">
+            {{> Template.dynamic template=content}}
+          </div>
+          <div>
+            {{> Template.dynamic template=about}}
+          </div>
+          <div>
+            {{> Template.dynamic template=testimonial}}
+          </div>
+          <div>
+           {{> Template.dynamic template=parallax}}
+          </div>
+          <div>
+            {{> Template.dynamic template=team}}
+          </div>
+          <footer>
+            {{> Template.dynamic template=footer}}
+        </footer>
+      </div>
+  </div>
+</template>

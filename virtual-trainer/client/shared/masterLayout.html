@@ -1,25 +1,28 @@
 <template name="masterLayout">
     <div id="wrapper">
-        <header id="header" class="page-topbar">
-        {{> Template.dynamic template=nav}}
-        </header>
-        <main id="main">
+       <div>
+         {{> Template.dynamic template=nav}}
+       </div>
+       <div id="main">
         {{> Template.dynamic template=main}}
-        </main>
-        <div>
-          {{> Template.dynamic template=about}}
-        </div>
-        <div>
-          {{> Template.dynamic template=testimonial}}
-        </div>
-        <div>
-        {{> Template.dynamic template=parallax}}
-        </div>
-        <div>
-          {{> Template.dynamic template=team}}
-        </div>
-        <footer>
-          {{> Template.dynamic template=footer}}
-        </footer>
+      </div>
+      <div>
+        {{> Template.dynamic template=content}}
+      </div>
+      <div>
+        {{> Template.dynamic template=about}}
+      </div>
+      <div>
+        {{> Template.dynamic template=testimonial}}
+      </div>
+      <div>
+       {{> Template.dynamic template=parallax}}
+      </div>
+      <div>
+        {{> Template.dynamic template=team}}
+      </div>
+      <footer>
+        {{> Template.dynamic template=footer}}
+      </footer>
     </div>
 </template>

@@ -1,11 +1,25 @@
 import './navBar.html';
 
 Template.navbar.onRendered(function() {
-  $('.button-collapse').sideNav();
-  $('.dropdown-button').dropdown();
+
+  $('document').ready(function(){
+    $('.button-collapse').sideNav();
+    $('.dropdown-button').dropdown();
+  })
 });
 
-// 
+Template.navbar.helpers({
+
+})
+
+Template.navbar.events({
+  'click #login'(event){
+    console.log("The event has been called : ",event);
+    console.log("the state is ",  AccountsTemplates.getState())
+    FlowRouter.go('/login');
+  }
+})
+//
 // <ul id="dropdown1" class="dropdown-content">
 //   <li><a href="#!">one</a></li>
 //   <li><a href="#!">two</a></li>
