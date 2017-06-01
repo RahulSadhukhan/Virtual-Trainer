@@ -17,6 +17,10 @@ Template.navbar.events({
     console.log("The event has been called : ",event);
     console.log("the state is ",  AccountsTemplates.getState())
     FlowRouter.go('/login');
+  },
+  'click #buttonDashboard'(event){
+    console.log("The event has beeb called : ", event);
+    FlowRouter.go('/dashboard');
   }
 })
 //

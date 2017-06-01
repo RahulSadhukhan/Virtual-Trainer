@@ -1,4 +1,9 @@
 <template name='navbar'>
+  <style>
+  #sidenav-overlay {
+    z-index: 996;
+  }
+  </style>
   <header id="header" class="page-topbar">
     <div class="navbar-fixed">
       <nav id="nav_f" class="default_color" role="navigation">
@@ -10,21 +15,21 @@
                       <li><a href="#intro">Service</a></li>
                       <li><a href="#team">Team</a></li>
                       <li><a href="#contact">Contact</a></li>
-                      <li><a>Dashboard</a></li>
+                      <li><a href="#" id="buttonDashboard">Dashboard</a></li>
                       <li id="login"><a href="#">{{> atNavButton}}</a></li>
                   </ul>
                   <ul id="slide-out" class="side-nav">
                     <li>
                       <div class="userView">
                         <div class="background">
-                          <img src="images/office.jpg">
+                          <img src="avatar/avatarBackground.jpg">
                         </div>
-                        <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-                        <a href="#!name"><span class="white-text name">John Doe</span></a>
-                        <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                        <a href="#!user"><img class="circle" src="avatar/profile.png"></a>
+                        <a href="#!name"><span class="white-text name">Prabal Raghav</span></a>
+                        <a href="#!email"><span class="white-text email">prabal74@yopmail.com</span></a>
                       </div>
                     </li>
-                    <li><a href="#"><i class="material-icons">cloud</i>Change Password</a></li>
+                    <li><a href="#">Change Password</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Service</a></li>
                     <li><a href="#">Team</a></li>
@@ -32,8 +37,10 @@
                     <li><a href="#">{{> atNavButton }}</a></li>
                     <li><div class="divider"></div></li>
                     <li><a class="subheader">Menu</a></li>
-                    <li><a class="waves-effect" href="#!">Gym Playlist</a></li>
+                    <li><a class="waves-effect" href="#!" id="buttonGymCollapsed">Gym Playlist</a></li>
                     <li><a class="waves-effect" href="#!">Yoga Playlist</a></li>
+                    <li><a class="waves-effect" href="#!">Add Records</a></li>
+                    <li><a class="waves-effect" href="#!">Write a Blog</a></li>
                   </ul>
               </div>
           </div>

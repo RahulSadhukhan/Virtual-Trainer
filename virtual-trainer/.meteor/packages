@@ -27,3 +27,7 @@ fourseven:scss
 jquery
 useraccounts:flow-routing
 useraccounts:materialize
+email
+themeteorchef:jquery-validation
+session
+kevohagan:sweetalert

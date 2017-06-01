@@ -1,68 +1,116 @@
 <Template name="profile">
-  <div class="row" style="width:50%">
-    <form class="col s12">
+  <style>
+    #profilePicture{
+      width: 80%;
+    }
+    .red-text{
+      font-size: 70%;
+    }
+  </style>
+  <div class="row">
+    <form class="col s12" id="profileForm">
+
       <div class="row">
-        <div class="col s12">
-          <p>Please take some time to fill your profile it will help us to know you better</p>
+        <div class="col s12 m12 l12">
+          <h2 class="header_text">User Profile</h2>
+        </div>
+        <div class="col s12 m12 l12">
+          <span class="flow-text">
+            Please take some time to fill your profile it will help us to know you better. Help you keep track of Yourself
+          </span>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+
+        <div class="col s12 m12 l6">
+          <div class="row">
+              <div class="col s12 m12 l12">
+                <div class="card" id="profilePicture">
+                  <div class="card-image">
+                    <img src="avatar/profile.png">
+                    <button type="button" data-activates="modal1" id="imgTrigger" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></button>
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title">Prabal Raghav</span>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
+
+        <div class="col s12 m12 l6">
+
+          <div class="input-field col s12 m12 l12">
+            <input id="first_name" type="text" name="first_name" class="validate fName" data-error=".errorTxt1">
+            <label for="first_name" >First Name*</label>
+            <div class="red-text">{{errorName}}</div>
+          </div>
+
+          <div class="input-field col s12 m12 l12">
+            <input id="last_name" type="text" class="validate lName">
+            <label for="last_name">Last Name</label>
+          </div>
+
+          <div class="input-field col s12 m12 l12">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Blood Group</label>
+          </div>
+
+          <div class="input-field col s12 m12 l12">
+             <input type="date" class="datepicker">
+          </div>
+
         </div>
+
       </div>
+
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s6 m6 l6">
           <input id="age" type="number" class="validate">
           <label for="age">Age</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s6 m6 l6">
           <input id="gender" type="text" class="validate">
           <label for="gender">Gender</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s6 m6 l6">
           <input id="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s6 m6 l6">
           <input id="phone" type="tel" class="validate">
           <label for="phone">Mobile Number</label>
         </div>
       </div>
       <div class = "row">
-        <div class="input-field col s4">
+        <div class="input-field col s12 m4 l4">
           <input id="height" type="text" class="validate">
           <label for="height">Height</label>
         </div>
-        <div class="input-field col s4">
+        <div class="input-field col s12 m4 l4">
           <input id="weight" type="text" class="validate">
           <label for="weight">Weight</label>
         </div>
-        <div class="input-field col s4">
+        <div class="input-field col s12 m4 l4">
           <input disabled id="disabled" type="text" class="validate">
           <label for="disabled">BMI</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s12 m6 l6 ">
           <input id="viseralFat" type="text" class="validate">
           <label for="viseralFat">Viseral Fat</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s12 m6 l6">
           <input id="subcutaneousFat" type="text" class="validate">
           <label for="subcutaneousFat">Subcutaneous Fat</label>
         </div>
       </div>
       <div clas="row">
         <div class="col s12 center-align">
-          <button class="btn waves-effect" id="save">Save</button>
+          <button type='submit' class="btn waves-effect" id="save">Save</button>
           <a class="btn waves-effect" href="/dashboard">Skip</a>
         </div>
       </div>

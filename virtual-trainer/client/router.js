@@ -29,11 +29,52 @@ FlowRouter.route('/dashboard', {
     BlazeLayout.render('dashboardLayout', {
       nav: 'navbar',
       main: 'dashNav',
-      content: 'cardVideo',
+      content: 'dashPanel',
     })
   },
   name: 'dashboard',
 })
+
+FlowRouter.route('/gym-playlist', {
+  action: function(params, queryParams) {
+    BlazeLayout.render('dashboardLayout', {
+      nav: 'navbar',
+      main: 'dashNav',
+      content: 'cardVideo',
+      rightNav: 'playlist',
+    })
+  },
+  name: 'dashboard',
+})
+
+FlowRouter.route('/blog-write', {
+  action: function(params, queryParams) {
+    BlazeLayout.render('dashboardLayout', {
+      nav: 'navbar',
+      main: 'dashNav',
+      content: 'cardVideo',
+      rightNav: 'playlist',
+    })
+  },
+  name: 'dashboard',
+})
+
+
+FlowRouter.route('/profile', {
+  action: function(params,queryParams) {
+    BlazeLayout.render('dashboardLayout', {
+      nav: 'navbar',
+      main: 'dashNav',
+      content: 'profile',
+    })
+  },
+  name: 'userProfile',
+})
+
+Accounts.config({
+  sendVerificationEmail: true,
+})
+
 
 AccountsTemplates.configure({
  defaultLayout: 'masterLayout',
@@ -48,7 +89,7 @@ AccountsTemplates.configure({
  positiveValidation: true,
  negativeFeedback: true,
  positiveFeedback: true,
- sendVerificationEmail: true,
+ // sendVerificationEmail: true,
 });
 
 AccountsTemplates.configureRoute('changePwd');
