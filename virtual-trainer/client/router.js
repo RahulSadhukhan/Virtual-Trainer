@@ -71,6 +71,17 @@ FlowRouter.route('/profile', {
   name: 'userProfile',
 })
 
+FlowRouter.route('/blog',{
+  action: function(params,queryParams) {
+    BlazeLayout.render('dashboardLayout', {
+      nav: 'navbar',
+      main: 'dashNav',
+      content: 'blog',
+    })
+  },
+  name: 'blog',
+})
+
 Accounts.config({
   sendVerificationEmail: true,
 })
